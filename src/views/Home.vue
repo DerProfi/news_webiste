@@ -1,18 +1,32 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <div class="header-container">
+      <h1>News from all over the world</h1>
+      <p>Welcome to the page that makes all other news websites irrelevant. The main use of this website is to search through every article published by over 80,000 news sources and blogs in the last 3 years.</p>
+      <p>There are a few possibilities how you can look for news. You either enter look for specific topics like "apple", or you can just click on the country which news you would like to read.</p>
+    </div>
+    <div class="input">
+      <form action="">
+        <input type="text" name="search" id="search" placeholder="search for topic">
+        <button type="submit">Search</button>
+      </form>
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+
 
 export default {
   name: "Home",
   components: {
-    HelloWorld,
   },
 };
 </script>
+
+<style lang="sass">
+  .header-container
+    width: 50%
+    margin: 0 auto
+</style>

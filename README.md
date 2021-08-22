@@ -1,4 +1,5 @@
-# news_website
+# News Website
+Hello, welcome to my latest Vue project. This time I thought about an API integration. After a bit of research, I decided on a news API provided by newsapi.org. 
 
 ## Project setup
 ```
@@ -19,6 +20,3 @@ npm run build
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
