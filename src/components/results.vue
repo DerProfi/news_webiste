@@ -1,5 +1,6 @@
 <template>
 <div>
+  <p>This page will show the results</p>
     <!--  API key: 53459456819c4042b7cae0f9610b0a51
       Documentation: https://newsapi.org/docs -->
 </div>
