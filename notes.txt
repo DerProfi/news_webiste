@@ -1,0 +1,13 @@
+- Results.vue
+-- Style missing lang
+-- Data created using native js instead of vue
+-- We could have a factory for the API calls
+
+- Home.vue
+-- Using a component instead of a view to navigate
+
+- Suggestions
+-- Filter by title
+-- Other filter types
+-- Create navigation to pages with pre-applied filter
+-- Modal to show the news' content
