@@ -11,32 +11,13 @@
 </template>
 
 <script>
+import { getNewsFactory } from "../services/newsService";
+
 export default {
   methods: {
-    getNews: function getNews(e) {
-    e.preventDefault()
-
-    const apiKey = '53459456819c4042b7cae0f9610b0a51'
-    let url = `https://newsapi.org/v2/everything?q=bitcoin&apiKey=${apiKey}`
-    const newsList = document.querySelector('.newsList')
-
-    fetch(url)
-      .then(res => res.json())
-      .then((data) => {
-        console.log(data)
-        data.articles.forEach(article =>{
-          let li = document.createElement('li');
-          let a = document.createElement('a');
-          a.setAttribute('href', article.url);
-          a.setAttribute('target', '_blank');
-          a.textContent = article.title;
-          li.appendChild(a);
-          newsList.appendChild(li);
-
-        })
-      }
-      )
-
+    getNews: async () => {
+      const news = await getNewsFactory('apple');
+      console.log(news);
     }
   },
 }
