@@ -6,8 +6,15 @@
     </div>
     <div class="input">
       <form action="">
-        <input type="text" name="search" id="search" placeholder="search for topic">
-        <router-link to="/results" tag="button">Search</router-link>
+        <input 
+          type="text"
+          id="search" 
+          placeholder="search for topic" 
+          v-model="searchRequest">
+        <router-link 
+          :to="`/results?search=${searchRequest}`"
+          tag="button" 
+          >Search</router-link>
       </form>
     <div class="counries-container">
       <button>US</button>
@@ -26,6 +33,11 @@
 export default {
   name: "Home",
   components: {
+  },
+  data() {
+    return {
+      searchRequest: '',
+    };
   },
 };
 </script>
