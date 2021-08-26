@@ -4,13 +4,13 @@
   <p></p>
       <button @click="getNews">Click</button>
       <ul class="newsList">
-        <li></li>
+        <li v-for="article in searchResults" :key="article">{{article.title}}</li>
       </ul>
 </div>
 </template>
 
 <script>
-import { getNewsFactory } from "../services/Call";
+//import { getNewsFactory } from "../services/Call";
 
 export default {
   data (){
@@ -20,12 +20,13 @@ export default {
     }
   },
   methods: {
-    getNews: async () => { 
-      // eslint-disable-next-line no-debugger
-      debugger
-      const news = await getNewsFactory(this.searchRequest);
-      this.searchResults = news;
-      console.log(news);
+    getNews () { 
+      const apiKey = '53459456819c4042b7cae0f9610b0a51'
+      let url = `https://newsapi.org/v2/everything?q=${this.searchRequest}&apiKey=${apiKey}`
+
+    fetch(url)
+      .then(res => res.json())
+      .then((news) => {this.searchResults = news.articles})
     }
   },
 }

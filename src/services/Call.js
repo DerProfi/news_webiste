@@ -5,5 +5,6 @@ export const getNewsFactory = async (filter) => {
 
     return await fetch(url)
       .then(res => res.json())
+      .then((news) => {return news})
 };
 
