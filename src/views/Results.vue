@@ -1,7 +1,17 @@
 <template>
   <div>
-    <input type="text" name="searchRequest" placeholder="new search">
-    <button type="submit">Search</button>
+    <form action="">
+      <input 
+      type="text" 
+      id="searchRequest" 
+      placeholder="new search" 
+      v-model="searchRequest">
+    <router-link 
+          @click.native="search"
+          :to="`/results?search=${searchRequest}`"
+          tag="button" 
+          >Search</router-link>
+    </form>
     <ul class="newsList">
       <li v-for="article in searchResults" :key="article"><a :href="article.url" target="_blank">{{article.title}}</a></li>
     </ul>
@@ -18,14 +28,16 @@ export default {
       searchRequest: this.$route.query.search,
     }
   },
-  created: function () { 
-      const apiKey = '53459456819c4042b7cae0f9610b0a51'
-      let url = `https://newsapi.org/v2/everything?q=${this.searchRequest}&apiKey=${apiKey}`
+  methods: {
+    search: function () { 
+              const apiKey = '53459456819c4042b7cae0f9610b0a51'
+          let url = `https://newsapi.org/v2/everything?q=${this.searchRequest}&apiKey=${apiKey}`
 
-    fetch(url)
-      .then(res => res.json())
-      .then((news) => {this.searchResults = news.articles})
+        fetch(url)
+          .then(res => res.json())
+          .then((news) => {this.searchResults = news.articles})
     },
+  },
 }
 
 </script>

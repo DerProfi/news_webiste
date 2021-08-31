@@ -6,16 +6,17 @@
     </div>
     <div class="input">
       <form action="">
-        <input 
-          type="text"
-          id="search" 
-          placeholder="search for topic" 
-          v-model="searchRequest">
-        <router-link 
-          :to="`/results?search=${searchRequest}`"
-          tag="button" 
-          >Search</router-link>
-      </form>
+      <input 
+            type="text"
+            id="search" 
+            placeholder="search for topic" 
+            v-model="searchRequest">
+      <router-link 
+            :to="`/results?search=${searchRequest}`"
+            tag="button" 
+            >Search
+      </router-link>
+    </form>
     <div class="counries-container">
       <button>US</button>
       <button>Germany</button>
@@ -27,8 +28,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
-
 
 export default {
   name: "Home",
