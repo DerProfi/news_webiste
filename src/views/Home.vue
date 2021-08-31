@@ -6,29 +6,27 @@
     </div>
     <div class="input">
       <form action="">
-      <input 
-            type="text"
-            id="search" 
-            placeholder="search for topic" 
-            v-model="searchRequest">
-      <router-link 
-            :to="`/results?search=${searchRequest}`"
-            tag="button" 
-            >Search
-      </router-link>
-    </form>
+        <input 
+          type="text"
+          id="search" 
+          placeholder="search for topic" 
+          v-model="searchRequest">
+        <router-link 
+          :to="`/results?search=${searchRequest}`"
+          tag="button" 
+          >Search</router-link>
+      </form>
+    </div>
     <div class="counries-container">
       <button>US</button>
       <button>Germany</button>
       <button>Brazil</button>
       <button>Turkey</button>
     </div>
-    </div>
   </div>
 </template>
 
 <script>
-
 export default {
   name: "Home",
   components: {
