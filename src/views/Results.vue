@@ -1,8 +1,5 @@
 <template>
 <div>
-  <p>This page will show the results</p>
-  <p></p>
-      <button @click="getNews">Click</button>
       <ul class="newsList">
         <li v-for="article in searchResults" :key="article">{{article.title}}</li>
       </ul>
@@ -19,16 +16,14 @@ export default {
       searchRequest: this.$route.query.search,
     }
   },
-  methods: {
-    getNews () { 
+  created: function () { 
       const apiKey = '53459456819c4042b7cae0f9610b0a51'
       let url = `https://newsapi.org/v2/everything?q=${this.searchRequest}&apiKey=${apiKey}`
 
     fetch(url)
       .then(res => res.json())
       .then((news) => {this.searchResults = news.articles})
-    }
-  },
+    },
 }
 
 </script>
