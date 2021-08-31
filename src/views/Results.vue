@@ -1,9 +1,11 @@
 <template>
-<div>
-      <ul class="newsList">
-        <li v-for="article in searchResults" :key="article">{{article.title}}</li>
-      </ul>
-</div>
+  <div>
+    <input type="text" name="searchRequest" placeholder="new search">
+    <button type="submit">Search</button>
+    <ul class="newsList">
+      <li v-for="article in searchResults" :key="article"><a :href="article.url" target="_blank">{{article.title}}</a></li>
+    </ul>
+  </div>
 </template>
 
 <script>
