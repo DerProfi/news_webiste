@@ -12,7 +12,7 @@
             placeholder="search for topic" 
             v-model="searchRequest">
       <router-link 
-            :to="`/results?search=${searchRequest}`"
+            :to="{ name: 'Results', query: { search: searchRequest }}"
             tag="button" 
             >Search
       </router-link>
